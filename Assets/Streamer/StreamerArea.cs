@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -11,7 +12,8 @@ namespace Gasimo.Streamer
 
         public UnityAction<uint> OnAreaLoaded;
         public UnityAction OnUnloadBegin;
-        
+
+        [NonSerialized]
         public StreamStatus status = StreamStatus.Unloaded;
 
         public List<StreamerArea> dependencies;
@@ -48,18 +50,22 @@ namespace Gasimo.Streamer
 
 
 
-        public void CollectDependenciesRecursively(uint depth, ref HashSet<StreamerArea> result)
+        public void CollectDependenciesRecursively(uint depth, ref HashSet<StreamerArea> visitedAreas)
         {
-            
+            // If already visited, return
+            if (visitedAreas.Contains(this))
+                return;
+
+            // Mark this area as visited
+            visitedAreas.Add(this);
+
             if (depth > 0)
             {
                 foreach (var dependency in dependencies)
                 {
-                    dependency.CollectDependenciesRecursively(depth - 1, ref result);
+                    dependency.CollectDependenciesRecursively(depth - 1, ref visitedAreas);
                 }
             }
-
-            result.Add(this);
         }
 
     }

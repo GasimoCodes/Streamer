@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d92435341ab935349b2428593d255052, type: 3}
-  m_Name: Area2
+  m_Name: Area3
   m_EditorClassIdentifier: 
   status: 0
   dependencies:
-  - {fileID: 11400000, guid: 94afe04d6197b594d8ffe00462215f7c, type: 2}
-  - {fileID: 11400000, guid: 96a8a81e3f959764eb96422830e94594, type: 2}
-  sceneName: SampleScene 1
-  targetSceneAsset: {fileID: 102900000, guid: b6417095150a9044faedc000b80d2f36, type: 3}
+  - {fileID: 11400000, guid: 875d736586d112443ba009aa0e0434fb, type: 2}
+  sceneName: SampleScene 2
+  targetSceneAsset: {fileID: 102900000, guid: a79f6f6f94471e049b15644082a3e888, type: 3}

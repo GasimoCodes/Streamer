@@ -15,7 +15,7 @@ namespace Gasimo.Streamer
         {
             if (other.CompareTag("Player"))
             {
-                StreamerCore.LoadAreaWithDependencies(targetArea);
+                StreamerCore.Instance.PlayerEnteredArea(targetArea);
             }
         }
 
@@ -23,9 +23,10 @@ namespace Gasimo.Streamer
         {
             if (other.CompareTag("Player"))
             {
-                StreamerCore.PurgeUnusedAreas();
+                StreamerCore.Instance.PlayerLeftArea(targetArea);
             }
         }
+
 
 
     }

@@ -10,7 +10,7 @@ public class StreamerSampleMemory : MonoBehaviour
 
     private void Awake()
     {
-        StreamerCore.LoadAreaWithDependencies(area, 1);
+        StreamerCore.Instance.LoadAreaWithDependencies(area, 1);
     }
 
 }
