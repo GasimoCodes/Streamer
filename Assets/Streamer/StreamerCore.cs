@@ -76,7 +76,6 @@ namespace Gasimo.Streamer
             // Activate scenes
             for (int i = 0; i < dependencies.Count; i++)
             {
-                Debug.Log("Activating handle " + handles[i].ToString() + " for " + dependencies[i].sceneName);
                 handles[i].allowSceneActivation = true;
                 dependencies[i].status = StreamStatus.Loaded;
                 areas.Add(dependencies[i]);
@@ -93,6 +92,7 @@ namespace Gasimo.Streamer
 
             if(EnteredAreasEvidence.Count != 0)
             {
+                Debug.Log("Player is in " + EnteredAreasEvidence[0]);
                 LoadAreaWithDependencies(EnteredAreasEvidence[0], 1);
             }
             

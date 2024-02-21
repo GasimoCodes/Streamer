@@ -9,9 +9,14 @@ namespace Gasimo.Streamer
     [CreateAssetMenu(fileName = "StreamerArea", menuName = "Gasimo/Streamer/Area")]
     public class StreamerArea : ScriptableObject
     {
-
+        /// <summary>
+        /// Actions will be invoked when the area is loaded. An aditional parameter is the LOD for the area (distance from main area)
+        /// </summary>
         public UnityAction<uint> OnAreaLoaded;
         public UnityAction OnUnloadBegin;
+
+        public UnityAction OnPlayerEnter;
+        public UnityAction OnPlayerExit;
 
         [NonSerialized]
         public StreamStatus status = StreamStatus.Unloaded;
