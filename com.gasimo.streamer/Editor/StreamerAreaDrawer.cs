@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using NUnit.Framework;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
-namespace Gasimo.Streamer
+namespace Gasimo.Streamer.Editor
 {
     [CustomPropertyDrawer(typeof(StreamerArea))]
     public class StreamerAreaDrawer : PropertyDrawer

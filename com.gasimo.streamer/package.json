@@ -1,0 +1,18 @@
+{
+  "name": "com.gasimo.streamer",
+  "version": "0.0.1",
+  "displayName": "Streamer",
+  "description": "Simple Unity Scene Streaming System.",
+  "unity": "2022.1",
+  "documentationUrl": "https://gasimocodes.github.io/Streamer/",
+  "keywords": [
+    "Level Streaming",
+    "Scene Streaming",
+    "Stream"
+  ],
+  "author": {
+    "name": "Gasimo",
+    "url": "https://github.com/GasimoCodes/"
+  },
+  "hideInEditor": false
+}

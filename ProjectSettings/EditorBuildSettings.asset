@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Streamer/TestData/Persistent.unity
+    path: Assets/Streamer/Sample/TestData/Persistent.unity
     guid: 40bffbe8595e1a046bd418474c3c1824
   - enabled: 1
-    path: Assets/Streamer/TestData/SampleScene.unity
+    path: Assets/Streamer/Sample/TestData/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Streamer/TestData/SampleScene 1.unity
+    path: Assets/Streamer/Sample/TestData/SampleScene 1.unity
     guid: b6417095150a9044faedc000b80d2f36
   - enabled: 1
-    path: Assets/Streamer/TestData/SampleScene 2.unity
+    path: Assets/Streamer/Sample/TestData/SampleScene 2.unity
     guid: a79f6f6f94471e049b15644082a3e888
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
