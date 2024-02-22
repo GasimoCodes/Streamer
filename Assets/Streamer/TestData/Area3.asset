@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92435341ab935349b2428593d255052, type: 3}
   m_Name: Area3
   m_EditorClassIdentifier: 
-  status: 0
   dependencies:
   - {fileID: 11400000, guid: 875d736586d112443ba009aa0e0434fb, type: 2}
   sceneName: SampleScene 2
