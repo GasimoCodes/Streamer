@@ -1,10 +1,12 @@
 {
     "name": "Gasimo.Streamer.Editor",
-    "rootNamespace": "",
+    "rootNamespace": "Gasimo.Streamer.Editor",
     "references": [
         "GUID:5850136e0f92f724a808fdb371f6e724"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
