@@ -8,6 +8,9 @@ using UnityEngine.SceneManagement;
 
 namespace Gasimo.Streamer
 {
+    /// <summary>
+    /// Brains of the streamer system. Handles loading and unloading of areas and their dependencies.
+    /// </summary>
     public class StreamerCore : MonoBehaviour
     {
 
@@ -25,7 +28,7 @@ namespace Gasimo.Streamer
 
         private static StreamerCore instance;
 
-
+        const string streameLogName = "[Stream]";
         
 
 
@@ -92,8 +95,11 @@ namespace Gasimo.Streamer
 
             if(EnteredAreasEvidence.Count != 0)
             {
-                Debug.Log("Player is in " + EnteredAreasEvidence[0]);
                 LoadAreaWithDependencies(EnteredAreasEvidence[0], 1);
+            }
+            else
+            {
+                Debug.LogWarning(streameLogName + " Lost track of player near " + area.name + ". It is recommended that the player is not able to exit portal bounds. Scene streaming will resume once player enters any currently loaded portal in the area.");
             }
             
         }
@@ -109,6 +115,13 @@ namespace Gasimo.Streamer
 
             // Add the area at the beginning of the list to ensure it's the current area
             EnteredAreasEvidence.Insert(0, area);
+
+
+            if (EnteredAreasEvidence.Count == 1)
+            {
+                LoadAreaWithDependencies(EnteredAreasEvidence[0], 1);
+            }
+
         }
 
         public async Task<int> PurgeUnusedAreas()

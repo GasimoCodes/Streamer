@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 namespace Gasimo.Streamer
 {
+    /// <summary>
+    /// Definition for a single streamable area
+    /// </summary>
     [CreateAssetMenu(fileName = "StreamerArea", menuName = "Gasimo/Streamer/Area")]
     public class StreamerArea : ScriptableObject
     {

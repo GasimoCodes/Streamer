@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace Gasimo.Streamer
 {
-
+    /// <summary>
+    /// Defines the in-game portal which triggers the loading of a new area
+    /// </summary>
     [RequireComponent(typeof(Collider))]
     public class StreamerPortal : MonoBehaviour
     {
@@ -30,8 +32,28 @@ namespace Gasimo.Streamer
             }
         }
 
-        // Draw the portal in the editor. Select shape based on the assigned collider component.
-        
+        /// <summary>
+        /// Manually trigger the load of the area
+        /// </summary>
+        public void ForceAreaEntry()
+        {
+            targetArea.OnPlayerEnter?.Invoke();
+            StreamerCore.Instance.PlayerEnteredArea(targetArea);
+        }
+
+        /// <summary>
+        /// Manually trigger the deregistering of the area
+        /// </summary>
+        public void ForceAreaExit()
+        {
+            targetArea.OnPlayerExit?.Invoke();
+            StreamerCore.Instance.PlayerLeftArea(targetArea);
+        }
+
+
+        /// <summary>
+        /// Draw the portal in the editor. Select shape based on the assigned collider component.
+        /// </summary>
         private void OnDrawGizmos()
         {
             
