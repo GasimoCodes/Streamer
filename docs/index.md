@@ -2,28 +2,18 @@
 _disableBreadcrumb: true
 ---
 
-# Welcome to **Subtitler** docs!
+# Welcome to **Streamer** docs!
 
-Subtitler is a simple to use Subtitling/Closed-Captions solution for Unity3D. Its currently under active development but is completely usable. Report all bugs or feature requests [here](https://github.com/GasimoCodes/Subtitler/issues/new/choose).
+Streamer is a simple Unity3D map streaming tool. Report all bugs or feature requests [here](https://github.com/GasimoCodes/Streamer/issues/new/choose).
 
+Notice that the project is in early development and breaking changes are bound to appear until version 0.1. 
 
 ## Features
 
-- Cull subtitles based on Player Distance / Audio Volume
-- Define dialogue entries with variable timing offsets and display lengths
-- Assign AudioClip to each dialogue entry, or use one big clip for whole dialogue instead (useful with videos or heavily processed sounds which cant be split by lines)
-- Rich Text Support
-- UI Options (Alignment, background panel visibility, Font size)
-- Trigger events (ScriptableEvent) when a certain line gets played
-- Fancy Editor Subtitle Authoring tool (>=2023.3, fallbacks to normal Inspector)
-- API to hook your custom subtitles scripts or logic
-- API to stop currently playing subtitles using their runtime ID
-- Timeline Integration
-- Unity Localization support
-  
+- Seamlessly stream Scenes based on player position.
+- Automatically stream in neighbouring/denendance scenes for the current level.
+- Player Enter/Leave events are exposed as C# Events for your own logic. An int is passed denoting the player "distance" from this scene. (0 - Current, 1 - Neighbour depth 1, 2 - Neighbour depth 2 etc.). This allows you to implement custom culling logic.
 
 ## Planned Features
-
-- Optional Localization Package Support
-- Optional Addressables for audioClips support
-- Possible FMod Integration
+- Object ownership (Object belongs to an area and can move to another area, changing its ownership)
+- Integration with my Saving system

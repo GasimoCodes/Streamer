@@ -2,24 +2,24 @@
 _layout: landing
 ---
 
-# Welcome to **Subtitler** docs!
-
-Subtitler is a simple to use Subtitling/Closed-Captions solution for Unity3D. Its currently under active development but is completely usable. Report all bugs or feature requests [here](https://github.com/GasimoCodes/Subtitler/issues/new/choose).
-
-
 ## Quick Start:
-Recommended Unity version (as of now) is 2023.3 due to a [bug in UIToolkit](https://forum.unity.com/threads/cant-bind-multicolumnlistview-to-property.1425945/), which is yet to be backported. Minimum supported version is 2022, but it doesnt feature custom editor for easier subtitle editing. 
 
 ### UPM:
 
 # [2022.2 and above](#tab/newer)
 
-1. Import [Cysharp UniTask]((https://github.com/Cysharp/UniTask)) by adding `https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask` into **Package Manager** 
-(*Package Manager/+/Install package from GIT URL*)
-
-2. Import Subtitler `https://github.com/GasimoCodes/Subtitler.git?path=com.gasimo.subtitler` into **Package Manager** 
+1. Import Subtitler `https://github.com/GasimoCodes/Subtitler.git?path=com.gasimo.subtitler` into **Package Manager** 
   
-3. To see **samples**, open Package Manager, navigate to Subtitler. Press Samples and select import. Sample will automatically import into *Assets/Samples/Subtitler*
+2. To see **samples**, open Package Manager, navigate to Subtitler. Press Samples and select import. Sample will automatically import into *Assets/Samples/Subtitler*
 
 ---
 
+### Setting up
+1) Add `StreamerManager` to your root scene with the player (The player needs to be marked with the `"Player"` tag and contain a valid Collider for trigger checks.
+2) For each scene you wish to be handled by Streamer:
+	- Create a new `StreamerArea` ScriptableObject (New/Gasimo/Streamer/StreamerArea) and configure it to point to the level it represents. 
+	- If the level/chunk is connected to other scenes (or has a dependency on some far-landmark which should be visible), add these into the Dependencies field.
+	![image](https://github.com/GasimoCodes/Streamer/assets/22917863/a6b918b4-7959-4b58-a07d-9b92aa4abc7a)
+
+	- Add `StreamerPortal` into the level, setup the level bounds and assign it its `StreamerArea` we created earlier.
+  ![image](https://github.com/GasimoCodes/Streamer/assets/22917863/59fa33d4-2a44-4827-860a-524b642ed8f0)
